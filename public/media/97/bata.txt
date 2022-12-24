@@ -1,0 +1,6 @@
+1.How can i implement offline and online sync ?
+2.we have lookup concept in mongodb . do we have same concept in Realm.(if i want to use $in or $or in realm)
+3.what is partition and Fexible sync option . what is the basic difference?
+4.If i use realm function for some peace of data. how to get current logged in user id ?
+5. can we create own custom Authentication provider in realm ?
+

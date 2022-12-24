@@ -1,0 +1,22 @@
+column in employee list
+Employee code
+Name 
+Email 
+Phone
+Branch 
+Department 
+Designation 
+Job Type 
+
+Filter in employee list 
+
+name 
+email 
+phone 
+branch 
+department 
+designation 
+Job type 
+
+We can divide Filter into two part 
+Basic and advance filter 

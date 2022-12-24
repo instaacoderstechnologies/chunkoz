@@ -1,0 +1,26 @@
+Admin 
+
+Employee - CRUD 
+Branch Master 
+Department Master 
+Designation Master
+Job Type Master 
+Employee Master - 
+Add Employee with basic info 
+send User name , password with Ess Link on their email
+Edit/View Employees all info
+Tab wise / 
+Like Basic info , Education info, Work Experience, skills , kyc documents , education doucments , Family Details
+
+Leave Master
+
+Public Holiday Master 
+
+
+
+HR Dashboard 
+show  pending request 
+total employees
+ 
+
+

@@ -6,12 +6,16 @@ use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\OrganizationController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Role\RoleController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [HomeController::class, 'index']);
+
 
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
     Route::get('/dashboard', function () {

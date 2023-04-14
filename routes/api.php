@@ -12,8 +12,16 @@ use App\Http\Controllers\Api\V1\PageApiController;
 use App\Http\Controllers\Api\V1\LevelApiController;
 use App\Http\Controllers\Api\V1\BookApiController;
 use App\Http\Controllers\Api\V1\SubjectApiController;
+use App\Http\Controllers\Api\V1\MainapiController;
 
 Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
+
+    // get friends
+    Route::get('/get-friends', [
+        MainapiController::class, 'index'
+    ])->name('get-friends');
+
+
     // Customer Send and verify OTP API
     Route::post('/send-otp', [
         AuthApiController::class, 'sendOtp'

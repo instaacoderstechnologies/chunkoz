@@ -28,7 +28,7 @@
                     </li>
 
                 </ul>
-                <a href="" class="btn btn-primary btn-getquote">
+                <a href="/chat" class="btn btn-primary btn-getquote">
                     Log in
                 </a>
             </div>

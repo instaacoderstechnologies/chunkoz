@@ -150,10 +150,12 @@
         integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        //var API_URL = 'http://127.0.0.1:8000/api/v1/'; 
+        var API_URL = 'https://chunkos.showmeproject.com/api/v1/';  
         $(document).ready(function(){
             let friendsList = [];
             $.ajax({  
-            url: 'http://127.0.0.1:8000/api/v1/get-friends/',  
+            url: API_URL+'get-friends/',
             type: 'GET',  
             dataType: 'json',  
             success: function(data, textStatus, xhr) {  

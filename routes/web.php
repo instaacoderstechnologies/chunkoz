@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\videos\VideoController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\OrganizationController;
@@ -42,6 +43,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
 
     Route::delete('users/destroy',[UserController::class,'massDestroy'])->name('users.massDestroy');
     Route::resource('users', UserController::class);
+    Route::resource('videos', VideoController::class);
 
 
 });

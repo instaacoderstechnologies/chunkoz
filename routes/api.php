@@ -20,7 +20,11 @@ Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
     Route::get('/get-friends', [
         MainapiController::class, 'index'
     ])->name('get-friends');
-
+    
+    // get vidoes
+    Route::get('/get-videos', [
+        MainapiController::class, 'getVideos'
+    ])->name('get-videos');
 
     // Customer Send and verify OTP API
     Route::post('/send-otp', [

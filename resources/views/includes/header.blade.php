@@ -30,8 +30,9 @@
       </a>
       <div class="navbar-collapse justify-content-md-end loggedIn" id="megaMenu">
         <div class="user">
-          <span class="d-flex align-items-center">
-            <img src="front/image/profile.png" alt="" class="img-fluid">
+          <span class="d-flex align-items-center profImg">
+            <!-- <img src="front/image/profile.png" alt="" class="img-fluid"> -->
+            <span class="pro_img"></span>
              <span class="user_name"></span>
           </span>
         </div>
@@ -48,10 +49,16 @@
   <script>
       $(document).ready(function(){
         var uname = window.localStorage.getItem('userName');
+        var userAvtar = window.localStorage.getItem('userAvtar');
         if(uname){
             $('.user_name').html('Hi, '+uname);
             $('.btn-getquote').show();
         }
+
+        if(userAvtar){
+            $('.pro_img').html(`<img src="front/image/`+userAvtar+`.png" alt="" class="img-fluid">`);
+        }
+
       });
 
       function logOut(){

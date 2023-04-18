@@ -133,6 +133,10 @@
             window.localStorage.setItem("userName", uName);
         }
 
+        function saveAvtar(avtar){
+            window.localStorage.setItem("userAvtar", avtar);
+        }
+
     </script>
 
     <script>
@@ -203,6 +207,11 @@
 
         $(document).on("click", ".choose-avatar input[type='radio']", function (e) {
             avatar = $(this).val();
+            saveAvtar(avatar);
+            var userAvtar = window.localStorage.getItem('userAvtar');
+            if(userAvtar){
+            $('.pro_img').html(`<img src="front/image/`+userAvtar+`.png" alt="" class="img-fluid">`);
+            }
             $("input[name='avatar']").prop('disabled', true);
             $("#chat-content").append(
                 `<div class="message-wrapper"><div class="chat-bubble right img"><img src="image/${avatar}.png" alt="" class="img-fluid"></div></div>`

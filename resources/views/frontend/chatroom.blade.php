@@ -116,7 +116,8 @@
                         <button class="load-more">Load More</button>
                     </div>
                     `);
-                    
+                    scrollBottom();
+                    popupInit(); 
                 }
 
             },  
@@ -142,6 +143,12 @@
         $(document).on("click", ".choose-name input[type='radio']", function (e) {
             userName = $(this).val();
             userLogin(userName);
+            var uname = window.localStorage.getItem('userName');
+            if(uname){
+                $('.user_name').html('Hi, '+uname);
+                $('.btn-getquote').show();
+            }
+
             $(this).parents('.option-wrapper').hide();
             $("#chat-content").append(
                 `<div class="message-wrapper"><div class="chat-bubble right">${userName}</div></div>`);
@@ -277,7 +284,7 @@
                                 <div class="options emotion-answer answers">
                                     <div>
                                         <label for="emotion_ans_yes">
-                                            <input type="radio" name="emotion-answer" id="emotion_ans_yes" value="Jackson">
+                                            <input type="radio" name="emotion-answer" id="emotion_ans_yes" value="Yes">
                                             <span class="yes">Yes</span>
                                         </label>
                                     </div>
@@ -528,20 +535,19 @@
             switch (ans) {
                 case 'Heal':
                     setTimeout(() => {
-                        $("#chat-content").append(`Heal`);
+                        //$("#chat-content").append(`Heal`);
                         scrollBottom();
                     }, 1500);
                     break;
                 case 'Laugh':
                     setTimeout(() => {
-                        $("#chat-content").append(`Laugh`);
+                        //$("#chat-content").append(`Laugh`);
+                        window.open("/drawing");
                         scrollBottom();
                     }, 1500);
                     break;
                 case 'Escape':
                         getVideos('Escape');
-                        scrollBottom();
-                        popupInit();
                     break;
                 
                 case 'Create':

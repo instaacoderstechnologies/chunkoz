@@ -17,6 +17,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600;700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+    integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -29,12 +32,31 @@
         <div class="user">
           <span class="d-flex align-items-center">
             <img src="front/image/profile.png" alt="" class="img-fluid">
-            Hi, Mark
+             <span class="user_name"></span>
           </span>
         </div>
-        <a href="" class="btn btn-primary btn-getquote">
+        <a onclick="logOut()" class="btn btn-primary btn-getquote">
           Log Out
         </a>
       </div>
     </div>
   </nav>
+  <style>
+      .btn-getquote{display:none}
+  </style>
+
+  <script>
+      $(document).ready(function(){
+        var uname = window.localStorage.getItem('userName');
+        if(uname){
+            $('.user_name').html('Hi, '+uname);
+            $('.btn-getquote').show();
+        }
+      });
+
+      function logOut(){
+          window.localStorage.removeItem('userName');
+          window.location.href = '/';
+      }
+
+  </script>

@@ -87,8 +87,7 @@
                 <!--begin:Menu item-->
                 <div class="menu-item">
                     <!--begin:Menu link-->
-                    <a class="menu-link" href="{{ route('logout') }}"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <a class="menu-link" href="{{ route('admin.videos.index') }}">
                         <span class="menu-bullet">
                             <span class="bullet bullet-dot"></span>
                         </span>

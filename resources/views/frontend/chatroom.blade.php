@@ -150,10 +150,12 @@
         integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        //var API_URL = 'http://127.0.0.1:8000/api/v1/'; 
-        var API_URL = 'https://chunkos.showmeproject.com/api/v1/';  
+        var API_URL = 'http://127.0.0.1:8000/api/v1/'; 
+        //var API_URL = 'https://chunkos.showmeproject.com/api/v1/';  
         $(document).ready(function(){
             let friendsList = [];
+            getVideos();
+
             $.ajax({  
             url: API_URL+'get-friends/',
             type: 'GET',  
@@ -179,6 +181,26 @@
             });
 
         });
+
+        function getVideos(){
+
+            let VideosList = [];
+            $.ajax({  
+            url: API_URL+'get-videos/',
+            data:{video_category:'Laugh'},
+            type: 'GET',  
+            dataType: 'json',  
+            success: function(data, textStatus, xhr) {  
+                console.log(data.data);
+               
+            },  
+            error: function(xhr, textStatus, errorThrown) {  
+                console.log('Something went wrong');  
+            }  
+
+            });
+
+        }
 
     </script>
 
@@ -574,58 +596,9 @@
             scrollBottom();
             switch (ans) {
                 case 'Heal':
-                    setTimeout(() => {
-                        $("#chat-content").append(`
-                        <div class="message-wrapper">
-                            <img src="image/Ellie.png" alt="" class="profile-pic left">
-                            <div class="chat-bubble left video">
-                                <div class="video-list">
-                                    <figure>
-                                        <a class="position-relative bg-white video-banner popup-youtube"
-                                            title="Ellie Learns to Do More Than Dance"
-                                            href="https://www.youtube.com/watch?v=ze_ie8Ctp60">
-                                            <img src="image/frame.svg" alt="" class="img-fluid">
-                                            <img src="image/image-1.png" alt=""
-                                                class="img-fluid position-absolute">
-                                        </a>
-                                    </figure>
-                                    <figure>
-                                        <a class="position-relative bg-white video-banner popup-youtube"
-                                            title="Ellie Learns to Do More Than Dance"
-                                            href="https://www.youtube.com/watch?v=ze_ie8Ctp60">
-                                            <img src="image/frame.svg" alt="" class="img-fluid">
-                                            <img src="image/image-1.png" alt=""
-                                                class="img-fluid position-absolute">
-                                        </a>
-                                    </figure>
-                                    <figure>
-                                        <a class="position-relative bg-white video-banner popup-youtube"
-                                            title="Ellie Learns to Do More Than Dance"
-                                            href="https://www.youtube.com/watch?v=ze_ie8Ctp60">
-                                            <img src="image/frame.svg" alt="" class="img-fluid">
-                                            <img src="image/image-1.png" alt=""
-                                                class="img-fluid position-absolute">
-                                        </a>
-                                    </figure>
-                                    <figure>
-                                        <a class="position-relative bg-white video-banner popup-youtube"
-                                            title="Ellie Learns to Do More Than Dance"
-                                            href="https://www.youtube.com/watch?v=ze_ie8Ctp60">
-                                            <img src="image/frame.svg" alt="" class="img-fluid">
-                                            <img src="image/image-1.png" alt=""
-                                                class="img-fluid position-absolute">
-                                        </a>
-                                    </figure>
-                                </div>
-
-                            </div>
-                            <button class="load-more">Load More</button>
-                        </div>
-                           
-                        `);
-                        scrollBottom();
-                        popupInit();
-                    }, 1500);
+                    $("#chat-content").append();
+                    scrollBottom();
+                    popupInit();
                     break;
                 case 'Laugh':
                     setTimeout(() => {

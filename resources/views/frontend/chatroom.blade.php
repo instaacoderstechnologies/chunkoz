@@ -1,30 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+@include('includes.header')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chunkos Landing</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="front/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
-        integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600;700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
+<style>
+    .app-chat {
+    padding-top: 7rem;
+}
+</style>
 
     <main id="root">
         <div class="app-chat">
             <div class="container-xxl">
                 <div class="app-chat--wrapper" id="chat-wrapper">
+                    
                     <div class="chat-content" id="chat-content">
                         <div class="message-wrapper">
                             <div class="chat-bubble left img">
@@ -57,105 +43,14 @@
             </div>
         </div>
     </main>
-    <footer class="app-footer">
-        <div class="container-xxl">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="footer-about">
-                        <div class="footer-logo">
-                            <img src="image/logo-white.png" alt="" class="img-fluid mb-3">
-                        </div>
-                        <div class="footer-content">
-                            <p>These "joy monsters" are best friends for kids. The Chunkos want to help you feel
-                                better!<br><br>One way they do that is by serving as best friends in hospital
-                                facilities.<br><br>The Chunkos are hospital best friends for sick kids. Through
-                                interactivity, sculpture and animation they turn the hospital into a place you actual
-                                want to visit and turn waiting time into healing time. At the end of the day, the
-                                Chunkos just want to help you feel better.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 ms-auto">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="footer-link">
-                                <h4 class="footer-title">About</h4>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="">History</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Our Team</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Term &amp; Conditions</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Privacy Policy</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="footer-link">
-                                <h4 class="footer-title">Services</h4>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="">Our Services</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Promo</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="footer-link">
-                                <h4 class="footer-title">Other</h4>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <a href="">Contact Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Help</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Privacy</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- <div class="text-end me-md-5">
-                        <a href="" class="btn btn-primary btn-getquote mt-3">
-                            Log Out
-                        </a>
-                    </div> -->
-
-
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
-        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="front/js/frontend.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
-        integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    @include('includes.footer')
+    
     <script>
         var API_URL = 'http://127.0.0.1:8000/api/v1/'; 
         //var API_URL = 'https://chunkos.showmeproject.com/api/v1/';  
         $(document).ready(function(){
             let friendsList = [];
-            getVideos();
-
             $.ajax({  
             url: API_URL+'get-friends/',
             type: 'GET',  
@@ -182,17 +77,48 @@
 
         });
 
-        function getVideos(){
+        function getVideos(cat){
 
-            let VideosList = [];
+            let videosList = [];
+            let videoData = '';
             $.ajax({  
             url: API_URL+'get-videos/',
-            data:{video_category:'Laugh'},
+            data:{video_category:cat},
             type: 'GET',  
             dataType: 'json',  
             success: function(data, textStatus, xhr) {  
                 console.log(data.data);
-               
+                videosList = data.data;
+                if(videosList.length > 0){
+                    for(let i=0; i <videosList.length; i++){
+                         videoData += `<figure>
+                                        <a class="position-relative bg-white video-banner popup-youtube"
+                                            title="Ellie Learns to Do More Than Dance"
+                                            href="`+videosList[i].video_url+`">
+                                            <img src="image/frame.svg" alt="" class="img-fluid">
+                                            <img src="video_thumb/`+videosList[i].video_thumb+`" alt=""
+                                                class="img-fluid position-absolute">
+                                        </a>
+                                    </figure>`;
+                    }
+
+                    
+                    $("#chat-content").append(`
+                    <div class="message-wrapper">
+                        <img src="image/Ellie.png" alt="" class="profile-pic left">
+                        <div class="chat-bubble left video">
+                            <div class="video-list">
+                                `+videoData+`
+                                
+                            </div>
+
+                        </div>
+                        <button class="load-more">Load More</button>
+                    </div>
+                    `);
+                    
+                }
+
             },  
             error: function(xhr, textStatus, errorThrown) {  
                 console.log('Something went wrong');  
@@ -200,6 +126,10 @@
 
             });
 
+        }
+
+        function userLogin(uName){
+            window.localStorage.setItem("userName", uName);
         }
 
     </script>
@@ -211,6 +141,7 @@
             msgBgColor = '';
         $(document).on("click", ".choose-name input[type='radio']", function (e) {
             userName = $(this).val();
+            userLogin(userName);
             $(this).parents('.option-wrapper').hide();
             $("#chat-content").append(
                 `<div class="message-wrapper"><div class="chat-bubble right">${userName}</div></div>`);
@@ -477,7 +408,7 @@
                             </div>
                             <div>
                                 <label for="Laugh">
-                                    <input type="radio" name="category" id="Happy" value="Laugh">
+                                    <input type="radio" name="category" id="Laugh" value="Laugh">
                                     <span>Laugh</span>
                                 </label>
                             </div>
@@ -558,7 +489,7 @@
                             </div>
                             <div>
                                 <label for="Laugh">
-                                    <input type="radio" name="category" id="Happy" value="Laugh">
+                                    <input type="radio" name="category" id="Laugh" value="Laugh">
                                     <span>Laugh</span>
                                 </label>
                             </div>
@@ -596,74 +527,29 @@
             scrollBottom();
             switch (ans) {
                 case 'Heal':
-                    $("#chat-content").append();
-                    scrollBottom();
-                    popupInit();
+                    setTimeout(() => {
+                        $("#chat-content").append(`Heal`);
+                        scrollBottom();
+                    }, 1500);
                     break;
                 case 'Laugh':
                     setTimeout(() => {
-                        $("#chat-content").append(`
-                        <div class="message-wrapper">
-                            <img src="image/Ellie.png" alt="" class="profile-pic left">
-                            <div class="chat-bubble left video">
-                                <div class="video-list">
-                                    <figure>
-                                        <a class="position-relative bg-white video-banner popup-youtube"
-                                            title="Ellie Learns to Do More Than Dance"
-                                            href="https://www.youtube.com/watch?v=ze_ie8Ctp60">
-                                            <img src="image/frame.svg" alt="" class="img-fluid">
-                                            <img src="image/image-1.png" alt=""
-                                                class="img-fluid position-absolute">
-                                        </a>
-                                    </figure>
-                                    <figure>
-                                        <a class="position-relative bg-white video-banner popup-youtube"
-                                            title="Ellie Learns to Do More Than Dance"
-                                            href="https://www.youtube.com/watch?v=ze_ie8Ctp60">
-                                            <img src="image/frame.svg" alt="" class="img-fluid">
-                                            <img src="image/image-1.png" alt=""
-                                                class="img-fluid position-absolute">
-                                        </a>
-                                    </figure>
-                                    <figure>
-                                        <a class="position-relative bg-white video-banner popup-youtube"
-                                            title="Ellie Learns to Do More Than Dance"
-                                            href="https://www.youtube.com/watch?v=ze_ie8Ctp60">
-                                            <img src="image/frame.svg" alt="" class="img-fluid">
-                                            <img src="image/image-1.png" alt=""
-                                                class="img-fluid position-absolute">
-                                        </a>
-                                    </figure>
-                                    <figure>
-                                        <a class="position-relative bg-white video-banner popup-youtube"
-                                            title="Ellie Learns to Do More Than Dance"
-                                            href="https://www.youtube.com/watch?v=ze_ie8Ctp60">
-                                            <img src="image/frame.svg" alt="" class="img-fluid">
-                                            <img src="image/image-1.png" alt=""
-                                                class="img-fluid position-absolute">
-                                        </a>
-                                    </figure>
-                                </div>
-
-                            </div>
-                            <button class="load-more">Load More</button>
-                        </div>
-                        `);
+                        $("#chat-content").append(`Laugh`);
                         scrollBottom();
-                        popupInit();
                     }, 1500);
                     break;
                 case 'Escape':
-                    setTimeout(() => {
-                        $("#chat-content").append(`
-                            <div class="message-wrapper">
-                                <img src="image/Ellie.png" alt="" class="profile-pic left">
-                                <div class="chat-bubble left">Loading ...</div>
-                            </div>
-                        `);
-                        scrollBottom()
-                    }, 1500);
+                        getVideos('Escape');
+                        scrollBottom();
+                        popupInit();
                     break;
+                
+                case 'Create':
+                        getVideos('Create');
+                        scrollBottom();
+                        popupInit();
+                    break;
+                
                 default:
                     setTimeout(() => {
                         $("#chat-content").append(`

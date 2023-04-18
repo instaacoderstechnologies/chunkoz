@@ -13,4 +13,8 @@ class HomeController extends Controller
     public function chatroom(){
         return view('frontend.chatroom');
     }
+
+    public function drawing(){
+        return view('frontend.drawing');
+    }
 }

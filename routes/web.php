@@ -17,6 +17,7 @@ use App\Http\Controllers\Role\RoleController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/chat', [HomeController::class, 'chatroom']);
+Route::get('/drawing', [HomeController::class, 'drawing']);
 
 
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {

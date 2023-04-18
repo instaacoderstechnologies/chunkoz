@@ -64,8 +64,8 @@
                                         class="form-control form-control-solid select2 {{ $errors->has('role_id') ? 'is-invalid' : '' }}"
                                         style="width: 100%;" name="video_category" id="country-dropdown" required>
                                         <option value="">Select Category</option>
-                                        <option value="Laugh">Laugh</option>
                                         <option value="Escape">Escape</option>
+                                        <option value="Create">Create</option>
                                     </select>
                                 </div>
 

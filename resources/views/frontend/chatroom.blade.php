@@ -4,6 +4,9 @@
     .app-chat {
     padding-top: 7rem;
 }
+button.load-more {
+    max-width: 230px;
+}
 </style>
 
     <main id="root">
@@ -474,13 +477,13 @@
                                 <div class="options last-answer">
                                     <div>
                                         <label for="last_answer_yes">
-                                            <input type="radio" name="act-answer" id="last_answer_yes" value="Yes">
+                                            <input type="radio" name="act-answer" id="last_answer_yes" value="Goodbye">
                                             <span>Goodbye</span>
                                         </label>
                                     </div>
                                     <div>
                                         <label for="last_answer_no">
-                                            <input type="radio" name="act-answer" id="last_answer_no" value="No">
+                                            <input type="radio" name="act-answer" id="last_answer_no" value="Changed my mind">
                                             <span>Change Your Mind?</span>
                                         </label>
                                     </div>                                
@@ -665,6 +668,13 @@
         }
 
         $(document).on("click", ".load-more", function (e) {
+            $("#chat-content").append(`
+                <div class="message-wrapper min-height">
+                    <img src="image/${avatar}.png" alt="" class="profile-pic right">
+                    <div class="chat-bubble right">
+                        Choose something else
+                    </div>
+                </div>`);
             setTimeout(() => {
                         $("#chat-content").append(`
                             <div class="message-wrapper">
@@ -702,6 +712,99 @@
                         `);
                         scrollBottom()
                     }, 1500)
+        });
+
+        $(document).on("click", ".last-answer input[type='radio']", function (e) {
+            let ans = $(this).val();
+            console.log(ans);
+            $("input[name='last-answer']").prop('disabled', true);
+            $("#chat-content").append(`
+                <div class="message-wrapper min-height">
+                    <img src="image/${avatar}.png" alt="" class="profile-pic right">
+                    <div class="chat-bubble right">
+                        ${ans}
+                    </div>
+                </div>`);
+            scrollBottom();
+            switch (ans) {
+                case 'Goodbye':
+                    setTimeout(() => {
+                        $("#chat-content").append(`
+                            <div class="message-wrapper">
+                                <img src="image/Ellie.png" alt="" class="profile-pic left">
+                                <div class="chat-bubble left">In case you change your mind</div>
+                            </div>
+                            <div class="message-wrapper option-wrapper emotions">
+                        <div class="options choose-cat">
+                            <div>
+                                <label for="Heal">
+                                    <input type="radio" name="category" id="Heal" value="Heal">
+                                    <span>Heal</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label for="Laugh">
+                                    <input type="radio" name="category" id="Laugh" value="Laugh">
+                                    <span>Laugh</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label for="Escape">
+                                    <input type="radio" name="category" id="Escape" value="Escape">
+                                    <span>Escape</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label for="Create">
+                                    <input type="radio" name="category" id="Create" value="Create">
+                                    <span>Create</span>
+                                </label>
+                            </div>                                                  
+                        </div>
+                    </div>
+                        `);
+                        scrollBottom()
+                    }, 1500);
+                    break;
+                default:
+                    setTimeout(() => {
+                        $("#chat-content").append(`
+                            <div class="message-wrapper">
+                                <img src="image/Ellie.png" alt="" class="profile-pic left">
+                                <div class="chat-bubble left">Yay! Let's go!</div>
+                            </div>
+                            <div class="message-wrapper option-wrapper emotions">
+                        <div class="options choose-cat">
+                            <div>
+                                <label for="Heal">
+                                    <input type="radio" name="category" id="Heal" value="Heal">
+                                    <span>Heal</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label for="Laugh">
+                                    <input type="radio" name="category" id="Laugh" value="Laugh">
+                                    <span>Laugh</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label for="Escape">
+                                    <input type="radio" name="category" id="Escape" value="Escape">
+                                    <span>Escape</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label for="Create">
+                                    <input type="radio" name="category" id="Create" value="Create">
+                                    <span>Create</span>
+                                </label>
+                            </div>                                                  
+                        </div>
+                    </div>
+                        `);
+                        scrollBottom()
+                    }, 1500)
+            }
         });
 
 

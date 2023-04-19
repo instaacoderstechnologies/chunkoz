@@ -65,7 +65,7 @@
                                         style="width: 100%;" name="video_category" id="country-dropdown" required>
                                         <option value="">Select Category</option>
                                         <option value="Escape">Escape</option>
-                                        <option value="Create">Create</option>
+                                        <option value="Laugh">Laugh</option>
                                     </select>
                                 </div>
 

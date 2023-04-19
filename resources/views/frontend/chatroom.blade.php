@@ -113,8 +113,10 @@
                             </div>
 
                         </div>
-                        <button class="load-more">Load More</button>
+                        <button class="load-more">Choose something</button>
                     </div>
+
+
                     `);
                     scrollBottom();
                     popupInit(); 
@@ -320,7 +322,7 @@
                                 <div class="options emotion-answer answers">
                                     <div>
                                         <label for="emotion_ans_yes">
-                                            <input type="radio" name="emotion-answer" id="emotion_ans_yes" value="Jackson">
+                                            <input type="radio" name="emotion-answer" id="emotion_ans_yes" value="Yes">
                                             <span class="yes">Yes</span>
                                         </label>
                                     </div>
@@ -549,20 +551,18 @@
                     }, 1500);
                     break;
                 case 'Laugh':
-                    setTimeout(() => {
-                        //$("#chat-content").append(`Laugh`);
-                        window.open("/drawing");
-                        scrollBottom();
-                    }, 1500);
+                    getVideos('Laugh');
                     break;
                 case 'Escape':
                         getVideos('Escape');
                     break;
                 
                 case 'Create':
-                        getVideos('Create');
+                    setTimeout(() => {
+                        //$("#chat-content").append(`Laugh`);
+                        window.open("/drawing");
                         scrollBottom();
-                        popupInit();
+                    }, 1500);                            
                     break;
                 
                 default:
@@ -663,6 +663,46 @@
 
             });
         }
+
+        $(document).on("click", ".load-more", function (e) {
+            setTimeout(() => {
+                        $("#chat-content").append(`
+                            <div class="message-wrapper">
+                                <img src="image/Ellie.png" alt="" class="profile-pic left">
+                                <div class="chat-bubble left">Yay! Let's go!</div>
+                            </div>
+                            <div class="message-wrapper option-wrapper emotions">
+                        <div class="options choose-cat">
+                            <div>
+                                <label for="Heal">
+                                    <input type="radio" name="category" id="Heal" value="Heal">
+                                    <span>Heal</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label for="Laugh">
+                                    <input type="radio" name="category" id="Laugh" value="Laugh">
+                                    <span>Laugh</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label for="Escape">
+                                    <input type="radio" name="category" id="Escape" value="Escape">
+                                    <span>Escape</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label for="Create">
+                                    <input type="radio" name="category" id="Create" value="Create">
+                                    <span>Create</span>
+                                </label>
+                            </div>                                                  
+                        </div>
+                    </div>
+                        `);
+                        scrollBottom()
+                    }, 1500)
+        });
 
 
     </script>

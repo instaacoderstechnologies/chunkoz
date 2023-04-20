@@ -182,19 +182,21 @@ nav.navbar .user img {
 
 .app-category--wrapper,
 .app-chat--wrapper,
-.app-draw--wrapper  {
+.app-draw--wrapper {
     background-color: var(--color6);
     border-radius: 40px;
     padding: 30px 60px 10px;
 }
 
-.app-chat--wrapper  {
+.app-chat--wrapper {
     background-color: rgba(255, 255, 255, 0.95);
 }
+
 .app-draw--wrapper {
     background-color: rgba(255, 255, 255, 1);
-    padding-left: 60px 40px;
+    padding: 60px 40px;
 }
+
 .category-list {
     margin-bottom: 3rem;
 }
@@ -654,7 +656,7 @@ button.load-more {
 
 .buttons .save-img {
     background: var(--color2);
-    border: 1px solid  var(--color2);
+    border: 1px solid var(--color2);
 }
 
 .drawing-board {
@@ -714,7 +716,9 @@ button.load-more {
 .footer-link a:hover::before {
     width: 100%;
 }
-
+.video-popup{
+    cursor: pointer;
+}
 /* responsive code */
 @media screen and (max-width:991px) {
     nav.navbar.dark-header {
@@ -888,6 +892,76 @@ button.load-more {
 
     .app-home .intro img {
         max-width: 100%;
+    }
+
+    .app-chat--wrapper {
+        padding: 10px 10px 0;
+    }
+
+    .message-wrapper:not(.option-wrapper) {
+        margin-top: 0.5rem;
+    }
+
+    .message-wrapper.option-wrapper {
+        padding-bottom: 0.25rem;
+    }
+
+    .message-wrapper .chat-bubble.img img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .message-wrapper .chat-bubble {
+        font-size: 0.875rem;
+        flex: 0 0 100%;
+        max-width: 1000%;
+        padding: 5px 16px;
+    }
+
+    .message-wrapper .options label span {
+        padding: 4px 8px;
+    }
+
+    .message-wrapper img.profile-pic {
+        width: 40px;
+        height: 40px;
+    }
+
+    .message-wrapper .chat-bubble.left,
+    .message-wrapper .options {
+        margin-left: 50px;
+    }
+
+    .message-wrapper .chat-bubble.right {
+        margin-right: 50px;
+    }
+
+    .app-chat--wrapper .chat-content {
+        margin-bottom: 20px;
+    }
+
+    .message-wrapper .options img,
+    .message-wrapper .chat-bubble.img img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .message-wrapper .options.answers label {
+        font-size: 0.875rem;
+    }
+
+    .message-wrapper .options.answers label span {
+        min-width: auto;
+        padding: 6px 12px;
+    }
+    .message-wrapper .options{
+        column-gap: 8px;
+        row-gap: 8px;
+    }
+    .message-wrapper .chat-bubble.video .video-list{
+        grid-template-columns: auto auto;
+        column-gap: 8px;
+        row-gap: 8px;
     }
 }
 

@@ -80,59 +80,59 @@ button.load-more {
 
         });
 
-        function getVideos(cat){
+    function getVideos(cat) {
 
-            let videosList = [];
-            let videoData = '';
-            $.ajax({  
-            url: API_URL+'get-videos/',
-            data:{video_category:cat},
-            type: 'GET',  
-            dataType: 'json',  
-            success: function(data, textStatus, xhr) {  
+        let videosList = [];
+        let videoData = '';
+        $.ajax({
+            url: API_URL + 'get-videos/',
+            data: {
+                video_category: cat
+            },
+            type: 'GET',
+            dataType: 'json',
+            success: function(data, textStatus, xhr) {
                 console.log(data.data);
                 videosList = data.data;
-                if(videosList.length > 0){
-                    for(let i=0; i <videosList.length; i++){
-                         videoData += `<figure>
-                                        <a class="position-relative bg-white video-banner popup-youtube"
-                                            title="Ellie Learns to Do More Than Dance"
-                                            href="`+videosList[i].video_url+`">
+                let items = [];
+                if (videosList.length > 0) {
+                    for (let i = 0; i < videosList.length; i++) {
+                        videoData += `<figure class="video-popup">
+                                        <div class="position-relative bg-white video-banner">
                                             <img src="image/frame.svg" alt="" class="img-fluid">
-                                            <img src="video_thumb/`+videosList[i].video_thumb+`" alt=""
-                                                class="img-fluid position-absolute">
-                                        </a>
+                                            <img src="video_thumb/${videosList[i].video_thumb}" alt=""class="img-fluid position-absolute">
+                                        </div>
                                     </figure>`;
+                        items.push({
+                            "src": videosList[i].video_url?.replace('&feature=youtu.be', ''),
+                            "type": 'iframe'
+                        })
                     }
 
-                    
+
                     $("#chat-content").append(`
                     <div class="message-wrapper">
                         <img src="image/Ellie.png" alt="" class="profile-pic left">
                         <div class="chat-bubble left video">
-                            <div class="video-list">
-                                `+videoData+`
-                                
-                            </div>
-
+                            <div class="video-list">${videoData}</div>
                         </div>
-                        <button class="load-more">Choose something</button>
+                        
                     </div>
-
-
                     `);
                     scrollBottom();
-                    popupInit(); 
+                    $(document).on("click", ".video-popup", function() {
+                        popupInit(items, $(this).index());
+                    });
                 }
 
-            },  
-            error: function(xhr, textStatus, errorThrown) {  
-                console.log('Something went wrong');  
-            }  
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                console.log('Something went wrong');
+            }
 
-            });
+        });
 
-        }
+    }
 
         function userLogin(uName){
             window.localStorage.setItem("userName", uName);

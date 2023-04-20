@@ -116,7 +116,7 @@ button.load-more {
                         <div class="chat-bubble left video">
                             <div class="video-list">${videoData}</div>
                         </div>
-                        
+                        <button class="load-more">Choose something</button>
                     </div>
                     `);
                     scrollBottom();
@@ -591,40 +591,32 @@ button.load-more {
         }
 
        
-        function popupInit() {
-            $('.video-list').magnificPopup({
-                delegate: 'a',
-                type: 'iframe',
-                disableOn: 700,
-                type: 'iframe',
-                mainClass: 'mfp-fade mfp-fixed',
-                gallery: {
-                    enabled: true
-                },
-                removalDelay: 160,
-                preloader: false,
-                iframe: {
-                    markup: '<div class="mfp-iframe-scaler">' +
-                        '<div class="mfp-close"></div>' +
-                        '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
-                        '<div class="mfp-bottom-bar">' +
-                        '<div class="mfp-title"></div>' +
-                        '<div class="mfp-counter"></div>' +
-                        '</div>' +
-                        '</div>',
-                },
-                //fixedContentPos: false,
-                callbacks: {
-                    markupParse: function (template, values, item) {
-                        values.title = item.el.attr('title');
-                    },
-                    close: function () {
-                        var didConfirm = confirm("Are you sure?");
-                        if (didConfirm == false) {
-                            return false;
-                        }
-                        setTimeout(() => {
-                            $("#chat-content").append(`
+        function popupInit(popupItems, index) {
+        $.magnificPopup.open({
+            items: popupItems,
+            gallery: {
+                enabled: true
+            },
+            iframe: {
+                markup: '<div class="mfp-iframe-scaler">' +
+                    '<div class="mfp-close"></div>' +
+                    '<iframe class="mfp-iframe" frameborder="0" allow="autoplay" allowfullscreen></iframe>' +
+                    '<div class="mfp-bottom-bar">' +
+                    '<div class="mfp-title"></div>' +
+                    '<div class="mfp-counter"></div>' +
+                    '</div>' +
+                    '</div>',
+                    
+            },
+            
+            callbacks: {
+                close: function() {
+                    var didConfirm = confirm("Are you sure?");
+                    if (didConfirm == false) {
+                        return false;
+                    }
+                    setTimeout(() => {
+                        $("#chat-content").append(`
                             <div class="message-wrapper">
                                 <img src="image/Ellie.png" alt="" class="profile-pic left">
                                 <div class="chat-bubble left">I had so much fun on that adventure with you!</div>
@@ -659,13 +651,13 @@ button.load-more {
                         </div>
                     </div>
                         `);
-                            scrollBottom()
-                        }, 1500)
-                    }
-                },
+                        scrollBottom()
+                    }, 1500)
+                }
+            }
+        }, index);
 
-            });
-        }
+    }
 
         $(document).on("click", ".load-more", function (e) {
             $("#chat-content").append(`

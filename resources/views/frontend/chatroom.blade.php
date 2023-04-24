@@ -142,6 +142,24 @@ button.load-more {
             window.localStorage.setItem("userAvtar", avtar);
         }
 
+        function storeUserRes(userData){
+          let sotredData = [];
+          sotredData = JSON.parse(window.localStorage.getItem('userResponces'));  
+          console.log(sotredData);
+          if(sotredData){
+            if(sotredData.length > 0 ){
+                sotredData.push(userData);
+                window.localStorage.setItem("userResponces", JSON.stringify(sotredData));
+            }
+          }else{
+            var data = [];
+            data.push(userData);
+            window.localStorage.setItem("userResponces", JSON.stringify(data));
+          }
+          
+
+        }
+
     </script>
 
     <script>
@@ -277,6 +295,12 @@ button.load-more {
 
         $(document).on("click", ".choose-emotion input[type='radio']", function (e) {
             emotion = $(this).val();
+            let userResData ={
+                    'que': 'How are you feeling today?',
+                    'ans': emotion
+                    }
+            storeUserRes(userResData);
+
             $("input[name='emotion']").prop('disabled', true);
             $("#chat-content").append(`
                 <div class="message-wrapper">
@@ -373,6 +397,11 @@ button.load-more {
         })
         $(document).on("click", ".emotion-answer input[type='radio']", function (e) {
             let ans = $(this).val();
+            let userResData ={
+                    'que': 'Ohh! Want to talk about it?',
+                    'ans': ans
+                    }
+            storeUserRes(userResData);
             $("input[name='emotion-answer']").prop('disabled', true);
             $("#chat-content").append(`
                 <div class="message-wrapper min-height">
@@ -537,6 +566,11 @@ button.load-more {
 
         $(document).on("click", ".choose-cat input[type='radio']", function (e) {
             let ans = $(this).val();
+            let userResData ={
+                    'que': 'You choosed',
+                    'ans': ans
+                    }
+            storeUserRes(userResData);
             $(".choose-cat").remove();
             $("#chat-content").append(`
                 <div class="message-wrapper min-height">
